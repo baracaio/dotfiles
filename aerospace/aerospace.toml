@@ -150,16 +150,18 @@ alt-shift-enter = 'mode app'
 cmd-h = []
 cmd-alt-h = []
 
-[workspace-to-monitor-force-assignment]
-1 = 'main'
-2 = 'main'
-3 = 'main'
-4 = 'main'
-5 = 'secondary'
-6 = 'secondary'
-7 = 'secondary'
-8 = 'secondary'
-9 = 'secondary'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'preview'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'safari'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'finder'
+run = 'layout floating'
 
 [mode.app.binding]
 alt-shift-k = 'exec-and-forget open -a /Applications/kitty.app'
@@ -187,3 +189,14 @@ alt-shift-l = ['join-with right', 'mode main']
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'secondary'
+6 = 'secondary'
+7 = 'secondary'
+8 = 'secondary'
+9 = 'secondary'
