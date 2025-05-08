@@ -6,3 +6,15 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+--
+
+-- Run gofmt + goimports on save
+
+local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    require("go.format").goimports()
+  end,
+  group = format_sync_grp,
+})
