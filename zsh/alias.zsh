@@ -1,4 +1,5 @@
 alias dev='cd ~/dev'
 alias reload='source ~/.zshrc'
 
-alias brandi='cd ~/dev/brandi'
+alias dotfiles='cd ~/dev/dotfiles'
+alias configs='cd ~/.config'
